@@ -14,7 +14,7 @@ class BestSellerListView extends StatelessWidget {
           ),
           child: BestSellerListViewItem(),
         ),
-        childCount: 10,
+        // childCount: 10,
       ),
     );
   }
