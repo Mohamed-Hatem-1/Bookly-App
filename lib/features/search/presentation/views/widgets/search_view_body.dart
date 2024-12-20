@@ -1,3 +1,4 @@
+import 'package:bookly/features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
 
 class SearchViewBody extends StatelessWidget {
@@ -8,6 +9,7 @@ class SearchViewBody extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(16.0),
       child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           TextField(
             decoration: InputDecoration(
@@ -21,23 +23,19 @@ class SearchViewBody extends StatelessWidget {
               // Implement search logic here
             },
           ),
-          SizedBox(height: 16.0),
-          Expanded(
-            child: ListView.builder(
-              itemCount: 10, // Replace with the actual number of search results
-              itemBuilder: (context, index) {
-                return ListTile(
-                  leading: Icon(Icons.book),
-                  title: Text(
-                      'Book Title $index'), // Replace with actual book title
-                  subtitle:
-                      Text('Author Name'), // Replace with actual author name
-                  onTap: () {
-                    // Implement book details navigation here
-                  },
-                );
-              },
+          const SizedBox(height: 16.0),
+          const Text(
+            'Search Results',
+            style: TextStyle(
+              fontSize: 20.0,
+              fontWeight: FontWeight.bold,
             ),
+          ),
+          const SizedBox(
+            height: 16.0,
+          ),
+          Expanded(
+            child: SearchResultListView(),
           ),
         ],
       ),
