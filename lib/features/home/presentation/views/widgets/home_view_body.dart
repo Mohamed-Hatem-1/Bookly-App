@@ -30,7 +30,7 @@ class HomeViewBody extends StatelessWidget {
               ],
             ),
           ),
-          BestSellerListView(),
+          NewestBooksListView(),
         ],
       ),
     );
