@@ -1,3 +1,4 @@
+import 'package:bookly/core/utils/constants.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_image.dart';
 import 'package:flutter/material.dart';
@@ -26,7 +27,9 @@ class BooksListView extends StatelessWidget {
                   right: 16,
                 ),
                 child: BookImage(
-                  imageUrl: state.books[index].volumeInfo.imageLinks.thumbnail,
+                  imageUrl:
+                      state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                          kDefaultBookImage,
                 ),
               ),
             ),
