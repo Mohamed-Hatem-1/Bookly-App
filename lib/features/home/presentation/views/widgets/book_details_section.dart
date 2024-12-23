@@ -17,7 +17,10 @@ class BookDetailsSection extends StatelessWidget {
           padding: EdgeInsets.symmetric(
             horizontal: width * 0.2,
           ),
-          child: const BookImage(),
+          child: const BookImage(
+            imageUrl:
+                'https://lumiere-a.akamaihd.net/v1/images/p_thejunglebook2016_19751_6b8cfcec.jpeg?region=0%2C0%2C540%2C810',
+          ),
         ),
         const SizedBox(
           height: 40,

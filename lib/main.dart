@@ -20,8 +20,13 @@ class Bookly extends StatelessWidget {
   Widget build(BuildContext context) {
     return MultiBlocProvider(
       providers: [
+        // BlocProvider(
+        //   create: (context) => serviceLocator<FeaturedBooksCubit>()..fetchFeaturedBooks(),
+        // ),
         BlocProvider(
-          create: (context) => serviceLocator<FeaturedBooksCubit>(),
+          create: (context) => FeaturedBooksCubit(
+            serviceLocator.get<HomeRepoImpl>()..fetchFeaturedBooks(),
+          ),
         ),
         BlocProvider(
           create: (context) => NewestBooksCubit(
