@@ -1,8 +1,10 @@
+import 'package:bookly/core/utils/app_router.dart';
 import 'package:bookly/core/utils/constants.dart';
 import 'package:bookly/features/home/presentation/manager/featured_books_cubit/featured_books_cubit.dart';
 import 'package:bookly/features/home/presentation/views/widgets/book_image.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:go_router/go_router.dart';
 
 class BooksListView extends StatelessWidget {
   const BooksListView({super.key});
@@ -26,10 +28,16 @@ class BooksListView extends StatelessWidget {
                 padding: const EdgeInsets.only(
                   right: 16,
                 ),
-                child: BookImage(
-                  imageUrl:
-                      state.books[index].volumeInfo.imageLinks?.thumbnail ??
-                          kDefaultBookImage,
+                child: GestureDetector(
+                  onTap: () {
+                    GoRouter.of(context).push(AppRouter.bookDetailsView,
+                        extra: state.books[index]);
+                  },
+                  child: BookImage(
+                    imageUrl:
+                        state.books[index].volumeInfo.imageLinks?.thumbnail ??
+                            kDefaultBookImage,
+                  ),
                 ),
               ),
             ),
