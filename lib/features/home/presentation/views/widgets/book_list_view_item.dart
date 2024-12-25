@@ -19,10 +19,13 @@ class BookListViewItem extends StatelessWidget {
         GoRouter.of(context).push(AppRouter.bookDetailsView, extra: bookModel);
       },
       child: SizedBox(
-        height: 125,
+        // child: IntrinsicHeight(
+        height: 140,
         child: Row(
           children: [
-            BookImage(imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail??kDefaultBookImage),
+            BookImage(
+                imageUrl: bookModel.volumeInfo.imageLinks?.thumbnail ??
+                    kDefaultBookImage),
             const SizedBox(
               width: 30,
             ),
@@ -44,7 +47,7 @@ class BookListViewItem extends StatelessWidget {
                   const SizedBox(
                     height: 3,
                   ),
-                   Text(
+                  Text(
                     bookModel.volumeInfo.authors?[0] ?? 'Unknown Author',
                     style: Styles.textStyle14,
                   ),
@@ -60,8 +63,9 @@ class BookListViewItem extends StatelessWidget {
                         ),
                       ),
                       const Spacer(),
-                       BookRating(
-rating: (bookModel.volumeInfo.averageRating ?? 0).toDouble(),
+                      BookRating(
+                        rating: (bookModel.volumeInfo.averageRating ?? 0)
+                            .toDouble(),
                         ratingCount: bookModel.volumeInfo.ratingsCount ?? 0,
                       ),
                     ],
