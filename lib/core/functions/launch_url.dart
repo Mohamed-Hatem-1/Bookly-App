@@ -10,7 +10,6 @@ Future<void> launchURL(context, String url) async {
       const SnackBar(
         content: Text('Could not launch the url'),
         backgroundColor: Colors.red,
-        
       ),
     );
   }

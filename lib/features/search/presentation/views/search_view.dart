@@ -12,7 +12,7 @@ class SearchView extends StatelessWidget {
         backgroundColor: Colors.transparent,
         title: const Text('Search for a book...'),
       ),
-      body: SearchViewBody(),
+      body: const SearchViewBody(),
     );
   }
 }

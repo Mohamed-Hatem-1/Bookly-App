@@ -1,8 +1,7 @@
+import 'package:bookly/features/search/presentation/view_model/search_book_cubit/search_book_cubit.dart';
 import 'package:bookly/features/search/presentation/views/widgets/search_result_list_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-
-import '../../view_model/search_book_cubit/search_book_cubit.dart';
 
 class SearchViewBody extends StatelessWidget {
   const SearchViewBody({super.key});
@@ -23,7 +22,8 @@ class SearchViewBody extends StatelessWidget {
               prefixIcon: const Icon(Icons.search),
             ),
             onChanged: (query) {
-              BlocProvider.of<SearchBookCubit>(context).fetchSearchedBooks(query: query);
+              BlocProvider.of<SearchBookCubit>(context)
+                  .fetchSearchedBooks(query: query);
             },
           ),
           const SizedBox(height: 16.0),

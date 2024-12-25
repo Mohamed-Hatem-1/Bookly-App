@@ -10,6 +10,7 @@ sealed class SearchBookState extends Equatable {
 final class SearchBookInitial extends SearchBookState {}
 
 final class SearchBookLoading extends SearchBookState {}
+
 final class SearchBookLoaded extends SearchBookState {
   final List<BookModel> books;
   const SearchBookLoaded({required this.books});

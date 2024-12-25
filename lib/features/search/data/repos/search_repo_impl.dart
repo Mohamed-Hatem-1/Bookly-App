@@ -15,7 +15,8 @@ class SearchRepoImpl implements SearchRepo {
       {required String query}) async {
     try {
       var data = await apiService.get(
-          endpoint: 'volumes?Filtering=free-ebooks&q=subject:$query&maxResults=40');
+          endpoint:
+              'volumes?Filtering=free-ebooks&q=subject:$query&maxResults=40');
       if (data['items'] == null) {
         return right([]);
       }

@@ -9,14 +9,14 @@ class CustomButton extends StatelessWidget {
   final double? fontSize;
   final void Function()? onPressed;
 
-
   const CustomButton({
     super.key,
     required this.backgroundColor,
     required this.textColor,
     required this.text,
     this.borderRadius = const BorderRadius.all(Radius.circular(16)),
-    this.fontSize, this.onPressed,
+    this.fontSize,
+    this.onPressed,
   });
 
   @override

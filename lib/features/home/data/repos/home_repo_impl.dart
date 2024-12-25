@@ -39,7 +39,7 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(
           endpoint:
               'volumes?Filtering=free-ebooks&Sorting=newest&q=programming&maxResults=40');
-              if (data['items'] == null) {
+      if (data['items'] == null) {
         return right([]);
       }
       List<BookModel> books = [];
@@ -62,7 +62,7 @@ class HomeRepoImpl implements HomeRepo {
       var data = await apiService.get(
           endpoint:
               'volumes?Filtering=free-ebooks&Sorting=relevance&q=$category&maxResults=40');
-              if (data['items'] == null) {
+      if (data['items'] == null) {
         return right([]);
       }
       List<BookModel> books = [];
